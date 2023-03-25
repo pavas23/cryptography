@@ -43,7 +43,7 @@ The above proof is zero-knowledge because Bob never learns which ball is green a
 
 ### Algorithm for Zero Knowledge Proof
 
-Alice has sensitive data 𝑥 for which she chooses two numbers 𝑝 and 𝑔 . 𝑝 can be a large prime and 𝑔 is a generator for 𝑝. 
+Alice has sensitive data 𝑥 for which she chooses two numbers 𝑝 and 𝑔 . ```𝑝``` can be a large prime and ```𝑔 is a generator for 𝑝```. 
 She calculates $y$ as $y = g^xmod(p)$ . Now she performs the following steps to create a zero knowledge proof for 𝑥.
 
 1. Alice chooses a random number 0 ≤ 𝑟 < 𝑝 − 1 and sends it to Bob as $h = g^r mod(p)$
