@@ -1,11 +1,11 @@
 const { BANK_DATA } = require("./config");
 
 class Bank {
-    constructor(B_id, name, password, IFC_code, number_of_accounts = 0, uid = []) {
-        this.B_id = B_id;
+    constructor(Bid, name, password, IFSCcode, number_of_accounts = 0, uid = []) {
+        this.Bid = Bid;
         this.name = name;
         this.password = password;
-        this.IFC_code = IFC_code;
+        this.IFSCcode = IFSCcode;
         this.number_of_accounts = number_of_accounts;
         this.uid = uid;
     }
