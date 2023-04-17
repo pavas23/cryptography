@@ -14,8 +14,10 @@ class Blockchain {
             transaction: transaction,
         });
         this.chain.push(newBlock);
-        var blockHashArray = this.userList.uidBlockHashMap.get(user.uid);
-        blockHashArray.push(newBlock.hash);
+        if(this.userList.uidBlockHashMap.has(user.uid) == false){
+            this.userList.uidBlockHashMap.set(user.uid,[]);
+        }
+        this.userList.uidBlockHashMap.get(user.uid).push(newBlock.hash);
         user.bid.push(Bid);
         return;
     }
@@ -50,7 +52,7 @@ class Blockchain {
         }
         this.chain = chain;
     }
-    verifyTransaction(uid, Bid) {
+    generatePublicHash(uid){
         const privateHash = this.userList.uidPrivateHashMap.get(uid);
         var recoveryKey;
         for (var user of this.userList.list) {
@@ -59,12 +61,16 @@ class Blockchain {
                 break;
             }
         }
-        const hashData = privateHash + recoveryKey;
+        var hashData = privateHash + recoveryKey;
         var publicHash = cryptoHash(hashData);
         for (var i = 0; i < 5; i++) {
             hashData = publicHash + recoveryKey;
             publicHash = cryptoHash(hashData);
         }
+        return publicHash;
+    }
+    verifyTransaction(uid, Bid) {
+        var publicHash = this.generatePublicHash(uid);
         var KYCVerified = false;
         for (let block of this.chain) {
             if (block.transaction === publicHash) {
@@ -74,26 +80,32 @@ class Blockchain {
         }
         if (KYCVerified) {
             var userTemp;
-            for (var u of userList.list) {
+            for (var u of this.userList.list) {
                 if (u.uid == uid) {
                     userTemp = u;
                     break;
                 }
             }
             this.createBlock(userTemp, Bid, publicHash);
+            console.log("KYC verification successfull!! ");
         } else {
             console.error("KYC Verification unsuccessfull !!");
         }
-        return KYCVerified;
     }
     viewUser(user) {
         var tempArr = this.userList.uidBlockHashMap.get(user.uid);
+        if(tempArr.length == 0){
+            console.log("No transactions!!");
+            return;
+        }
         for (var block of this.chain) {
-            if (block.hash in tempArr) {
+            if (tempArr.includes(block.hash)) {
                 console.log(block);
             }
         }
     }
 };
 
-module.exports = Blockchain;
+module.exports = {
+    Blockchain:Blockchain,
+};

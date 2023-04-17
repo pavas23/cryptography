@@ -15,7 +15,9 @@
     "hex-to-binary": "^1.0.1",
     "node": "^19.8.1",
     "node-redis-pubsub": "^5.0.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "prompt-sync": "^4.2.0",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
     "redis": "^2.8.0"

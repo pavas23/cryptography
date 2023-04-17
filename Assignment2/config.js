@@ -16,7 +16,7 @@ const USER_DATA = [
         aadhaarId: "397788000234",
         panId: "ABCTY1234D",
         recoveryKey: "23$24%",
-        bid: 0,
+        bid:[]
     },
     {
         uid: 2,
@@ -24,7 +24,7 @@ const USER_DATA = [
         aadhaarId: "294788000036",
         panId: "4BCTZ1634F",
         recoveryKey: "2%$+678%",
-        bid: 0,
+        bid:[]
     },
     {
         uid: 3,
@@ -32,7 +32,7 @@ const USER_DATA = [
         aadhaarId: "994486004233",
         panId: "4ZCT21234X",
         recoveryKey: "ab@a$wkjn%",
-        bid: 0,
+        bid:[]
     },
     {
         uid: 4,
@@ -40,7 +40,7 @@ const USER_DATA = [
         aadhaarId: "794556004233",
         panId: "4ZCT21734X",
         recoveryKey: "gh$232%23@fg",
-        bid: 0,
+        bid:[]
     },
     {
         uid: 5,
@@ -48,7 +48,7 @@ const USER_DATA = [
         aadhaarId: "784556404133",
         panId: "XZCT21834Y",
         recoveryKey: "gh$ewjkbfeb$32%23@fg",
-        bid: 0,
+        bid:[]
     },
     {
         uid: 6,
@@ -56,7 +56,7 @@ const USER_DATA = [
         aadharId: "918273645109",
         panId: "5647389210",
         recoveryKey: "987123",
-        bid: 0,
+        bid:[]
     },
     {
         uid: 7,
@@ -64,7 +64,7 @@ const USER_DATA = [
         aadharId: "102349875816",
         panId: "2834087456",
         recoveryKey: "109823",
-        bid: 0,
+        bid:[]
     },
     {
         uid: 8,
@@ -72,7 +72,7 @@ const USER_DATA = [
         aadharId: "897123456019",
         panId: "1029387465",
         recoveryKey: "563428",
-        bid: 0,
+        bid:[]
     },
     {
         uid: 9,
@@ -80,7 +80,7 @@ const USER_DATA = [
         aadharId: "812763450967",
         panId: "4309817562",
         recoveryKey: "708965",
-        bid: 0,
+        bid:[]
     },
     {
         uid: 10,
@@ -88,40 +88,40 @@ const USER_DATA = [
         aadharId: "912837098788",
         panId: "1029677348",
         recoveryKey: "890144",
-        bid: 0,
+        bid:[]
     },
 ];
 
 const BANK_DATA = [
     {
-        B_id: 1,
-        name: "pavas garg ltd",
+        Bid: 1,
+        name: "South Indian Bank",
         password: "sgrhrzhrdzh",
-        IFC_code: "aesg232532",
+        IFSCcode: "aesg232532",
     },
     {
-        B_id: 1,
-        name: "national bank",
+        Bid: 2,
+        name: "Kotak Mahindra Bank",
         password: "ghcfhdgdzg",
-        IFC_code: "vbfh765433",
+        IFSCcode: "vbfh765433",
     },
     {
-        B_id: 1,
-        name: "SBI",
+        Bid: 3,
+        name: "ICICI Bank",
         password: "poiuytrdfcv",
-        IFC_code: "poir39425903",
+        IFSCcode: "poir39425903",
     },
     {
-        B_id: 1,
-        name: "Bandhan ltd",
+        Bid: 4,
+        name: "HDFC Bank",
         password: "Zsdrtyhfjgmnjhg",
-        IFC_code: "mdsv634431982",
+        IFSCcode: "mdsv634431982",
     },
     {
-        B_id: 1,
-        name: "smart bank",
+        Bid: 5,
+        name: "Bandhan Bank",
         password: "thyfwvehLWUBWKV",
-        IFC_code: "vdgj09765423",
+        IFSCcode: "vdgj09765423",
     }
 ];
 

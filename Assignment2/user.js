@@ -1,5 +1,6 @@
 const { USER_DATA } = require("./config");
 const cryptoHash = require('./crypto-hash');
+var readlineSync = require('readline-sync');
 
 class user {
     constructor(uid, name, aadhaarId, panId, recoveryKey, bid = []) {
@@ -31,6 +32,17 @@ class userList {
             this.addToUidPrivateHashMap(user);
         }
     }
+    registerUser(){
+        var userInput = {};
+        userInput.uid = this.list.length+1;
+        userInput.name = readlineSync.question('Enter Your Name: ');
+        userInput.aadhaarId = readlineSync.question("Enter your aadhaarId: ");
+        userInput.panId = readlineSync.question("Enter Your PanId: ");
+        userInput.recoveryKey = readlineSync.question("Enter Your Recovery Key: ");
+        userInput.bid = [];
+        this.uidBlockHashMap.set(userInput.uid,[]);
+        return userInput;
+    };
 }
 
 module.exports = {
