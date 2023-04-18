@@ -21,6 +21,7 @@ class Blockchain {
         }
         this.userList.uidBlockHashMap.get(user.uid).push(newBlock.hash);
         user.bid.push(Bid);
+        user.updated = 1;
         return;
     }
     static isValidChain(chain) {
@@ -80,18 +81,19 @@ class Blockchain {
                 break;
             }
         }
-        if (KYCVerified) {
-            var userTemp;
-            for (var u of this.userList.list) {
-                if (u.uid == uid) {
-                    userTemp = u;
-                    break;
-                }
+        var userTemp;
+        for (var u of this.userList.list) {
+            if (u.uid == uid) {
+                userTemp = u;
+                break;
             }
+        }
+        if (KYCVerified) {
             this.createBlock(userTemp, Bid, publicHash);
             console.log("KYC verification successfull!! ");
         } else {
-            console.error("KYC Verification unsuccessfull !!");
+            userTemp.updated = 0;
+            console.error("KYC Verification unsuccessfull, Please manually verify your KYC !!");
         }
     }
     viewUser(user) {

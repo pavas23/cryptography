@@ -25,6 +25,7 @@ class Test{
         console.log();
         console.log("Press 1 to view all your transactions ");
         console.log("Press 2 to initiate a new transaction ");
+        console.log("Press 3 to update your details ");
     }
     test(){
         while(true){
@@ -41,10 +42,10 @@ class Test{
                 console.log("Details of newly registered user are");
                 console.log(newUser);
             }else if(num == 2){
+                var userId = readlineSync.question("Enter your User Id: ");
                 this.printMenuAlreadyRegistered();
                 var x = 0;
                 x  = readlineSync.question();
-                var userId = readlineSync.question("Enter your User Id: ");
                 if(userId > KYCVerificationBlockchain.userList.list.length){
                     console.log("Invalid user id!!");
                     console.log("Try Again");
@@ -53,7 +54,7 @@ class Test{
                 var currUser = KYCVerificationBlockchain.userList.list[userId-1];
                 if(x == 1){
                     KYCVerificationBlockchain.viewUser(currUser);
-                }else{
+                }else if(x == 2){
                     console.log("This is your initial KYC verification: ");
                     console.log();
                     console.log("Details of all banks registered in Blockchain");
@@ -61,12 +62,23 @@ class Test{
                     console.log(KYCVerificationBlockchain.bankList.list);
                     console.log();
                     var BankId = readlineSync.question("Enter the id of the bank you are applying to for KYC Verification: ");
-                    if(currUser.bid.length == 0){
+                    if(currUser.updated === 0){
                         KYCVerificationBlockchain.createBlock(currUser,BankId,KYCVerificationBlockchain.generatePublicHash(currUser.uid));
+                        console.log("Verification Successful");
                     }else{
                         KYCVerificationBlockchain.verifyTransaction(currUser.uid,BankId);
                     }
-                    console.log("Transaction successfull !!");
+                }else if(x == 3){
+                    var recoveryKey = readlineSync.question("Enter your recovery key: ");
+                    if(recoveryKey == currUser.recoveryKey){
+                        console.log("Enter new details");
+                        KYCVerificationBlockchain.userList.updateUser(userId);
+                        console.log("User details successfully updated !!");
+                    }else{
+                        console.log("Wrong recovery key, Try again!!");
+                    }
+                }else{
+                    console.log("Enter a valid option !!");
                 }
             }
         }
