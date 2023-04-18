@@ -90,10 +90,10 @@ class Blockchain {
         }
         if (KYCVerified) {
             this.createBlock(userTemp, Bid, publicHash);
-            console.log("KYC verification successfull!! ");
+            console.log("KYC verification successful !! ");
         } else {
             userTemp.updated = 0;
-            console.error("KYC Verification unsuccessfull, Please manually verify your KYC !!");
+            console.error("KYC Verification unsuccessful, Please manually verify your KYC !!");
         }
     }
     viewUser(user) {
