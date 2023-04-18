@@ -1,11 +1,13 @@
 const Block = require("./block");
 const { user, userList } = require("./user");
+const {bankList,Bank} = require("./bank");
 const cryptoHash = require('./crypto-hash');
 
 class Blockchain {
     constructor() {
         this.chain = [Block.genesis()];
         this.userList = new userList();
+        this.bankList = new bankList();
         this.userList.addToHashAllUsers();
     }
     createBlock(user, Bid, transaction) {
@@ -95,6 +97,7 @@ class Blockchain {
     viewUser(user) {
         var tempArr = this.userList.uidBlockHashMap.get(user.uid);
         if(tempArr.length == 0){
+            console.log();
             console.log("No transactions!!");
             return;
         }

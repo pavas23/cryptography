@@ -35,9 +35,20 @@ class userList {
     registerUser(){
         var userInput = {};
         userInput.uid = this.list.length+1;
+        console.log("Enter your details to register ");
         userInput.name = readlineSync.question('Enter Your Name: ');
-        userInput.aadhaarId = readlineSync.question("Enter your aadhaarId: ");
-        userInput.panId = readlineSync.question("Enter Your PanId: ");
+        var tempAadhaarId = readlineSync.question("Enter your aadhaarId: ");
+        while(tempAadhaarId.length != 12){
+            console.log("Please enter a valid 12 digit aadhaar ID");
+            var tempAadhaarId = readlineSync.question("Enter your aadhaarId: ");
+        }
+        userInput.aadhaarId = tempAadhaarId;
+        var tempPanId = readlineSync.question("Enter Your PanId: ");
+        while(tempPanId.length != 10){
+            console.log("Please enter a valid 10 digit pan ID");
+            var tempPanId = readlineSync.question("Enter Your PanId: ");
+        }
+        userInput.panId = tempPanId;
         userInput.recoveryKey = readlineSync.question("Enter Your Recovery Key: ");
         userInput.bid = [];
         this.uidBlockHashMap.set(userInput.uid,[]);
