@@ -83,6 +83,7 @@ class Test{
                     if(recoveryKey == currUser.recoveryKey){
                         console.log("Enter new details");
                         KYCVerificationBlockchain.userList.updateUser(userId);
+                        console.log();
                         console.log("User details successfully updated !!");
                     }else{
                         console.log("Wrong recovery key, Try again!!");
