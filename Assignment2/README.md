@@ -57,3 +57,20 @@ Here Bob acts as a verifier and checks if Alice knows the value of 𝑥 without 
 
 ![Cryptography Project](https://user-images.githubusercontent.com/97559428/227742407-250e4b9d-4756-43b4-acd9-afdb7c7f569c.png)
 
+## Screenshots of the working Application
+
+### Register User <br>
+<img width="1103" alt="add" src="https://user-images.githubusercontent.com/97559428/232873498-ee57895e-e982-4168-a470-217445b3ef4b.png">
+
+### KYC Verification <br>
+<img width="1124" alt="KYC Verification" src="https://user-images.githubusercontent.com/97559428/232873041-d650c71b-20b1-41a8-b3ef-2c04bbf9e49e.png">
+
+### View All Transactions of User
+<img width="1109" alt="view user" src="https://user-images.githubusercontent.com/97559428/232874843-c513236a-94b6-4270-a5b8-bb1e5580b208.png">
+
+### Update User (Unsuccessful Transaction)
+<img width="1103" alt="Update Details (Unsuccessful)" src="https://user-images.githubusercontent.com/97559428/232877754-701da7e0-e07c-466a-9791-07a8ccabbe0b.png">
+
+### Show Blockchain
+<img width="1305" alt="Printing Blockchain" src="https://user-images.githubusercontent.com/97559428/232878692-40664a6f-37c7-454c-9319-823512854452.png">
+
