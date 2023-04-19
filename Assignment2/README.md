@@ -23,6 +23,14 @@ If a miner produces a block that is approved by an electronic consensus of nodes
 This essentially is the crux of blockchain. ```Proof of Work``` is what is keeping all transactions on the blockchain secure
 and protecting it from malicious attempts to alter these transactions.
 
+## Problem Statement
+The banks are responsible for completing the KYC procedure while opening accounts. Banks also are required to periodically update their customers’ KYC details. KYC may be a manual, time-consuming, and redundant across institutions.
+
+Blockchain would enable financial institutions to deliver better compliance outcomes, increase efficiency, and improve customer experience.
+
+## Our Solution to the Problem
+Users can verify their KYC with any bank of their choice, once verification is successful the transaction is put in a block which after mining is added to the blockchain, from now onwards if user wants to open bank account with any other bank he/she needs to submit only their user id which will be used to trace the earlier KYC verification transaction stored in the blockchain.
+
 ## Zero Knowledge Proof
 Zero-Knowledge Proofs (ZKP) refer to a proof construction that allows you to convince someone that you know something without
 revealing any information about what it is you know in the process. To explain ZKPs with the help of an example consider the following scenario:
