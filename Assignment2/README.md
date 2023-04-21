@@ -82,3 +82,15 @@ Here Bob acts as a verifier and checks if Alice knows the value of 𝑥 without 
 ### Show Blockchain
 <img width="1305" alt="Printing Blockchain" src="https://user-images.githubusercontent.com/97559428/232878692-40664a6f-37c7-454c-9319-823512854452.png">
 
+## Installation
+
+```bash
+    node test.js
+```
+
+## Authors
+
+- [Pavas Garg](https://www.github.com/pavas23)
+- [Saksham Bajaj](https://github.com/SakshamBajaj18)
+- [Prachi Shah](https://github.com/pks03)
+
